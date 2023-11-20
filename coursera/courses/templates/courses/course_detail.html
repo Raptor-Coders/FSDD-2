@@ -1,0 +1,26 @@
+{% extends "courses/base.html" %} {% block main %}
+
+<hr />
+<div class="container mt-4">
+  <h1>{{ course.name }}</h1>
+  <h3>What you'll learn</h3>
+  <p>{{ course.description | linebreaks}}</p>
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <!-- <li class="list-group-item">{{ course.description | linebreaks}}</li> -->
+        <li class="list-group-item">
+          Number of Sessions: {{ course.sessions}}
+        </li>
+        <li class="list-group-item">
+          Session Duration: {{ course.session_duration}}
+        </li>
+        <li class="list-group-item">Start Date: {{ course.start_date}}</li>
+        <li class="list-group-item">End Date: {{ course.end_date}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr />
+
+{% endblock %}

@@ -1,0 +1,25 @@
+body {
+  background-color: #eeeeee;
+}
+
+h1 {
+  color: blue;
+}
+
+p {
+  font-size: 28px;
+}
+
+.promotion {
+  color: green;
+}
+
+#course-list {
+  background-color: silver;
+  border: 1ps solid dashed;
+  padding: 10px;
+}
+
+#course-list h2 {
+  color: purple;
+}

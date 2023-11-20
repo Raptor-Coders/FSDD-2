@@ -1,0 +1,14 @@
+{% extends "courses/base.html" %} {% block page_title %} Courses {% endblock %}
+{% block main %}
+<div class="container mt-4">
+  <h3>Subscribe here</h3>
+  <form>
+    <div class="mb-3">
+      <table>
+        {% csrf_token %} {{ form.as_table }}
+      </table>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {% endblock %}
+</div>
