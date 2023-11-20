@@ -1,0 +1,94 @@
+p {
+    color: blue;
+    background-color: lightgray;
+}
+
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    columns: #fff;
+    padding: 20px 0;
+}
+
+header.h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+
+div.settings {
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+}
+div.settings label {text-align:right;}
+div.settings label:after { content: ":";}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid silver;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  .nowrap  { 
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  
+  .wrap    { 
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }  
+  .wrap li {
+    background: gold;
+  }
+  
+  courses.container {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2 px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  li::before {
+    content: "\2022"; /*Bullit point char */
+    color: #e74c3c;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+
+  important {
+    color: #e74c3c;
+    font-weight: bold;
+  }

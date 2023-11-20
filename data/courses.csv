@@ -1,0 +1,4 @@
+name,description,sessions,session_duration,start_date,end_date,tags,is_featured,is_active,is_hidden,image_url,max_students
+"Beginners Django","Introductory course to Django",10,180,2023-10-01,2023-12-15,"Django, Course, Beginner",True,True,False,"http://myimages.com/image1.png",10
+"Intermediate Django","Intermediate Django course",10,180,2023-10-01,2023-12-15,"Django, Course, Intermediate",True,True,False,"http://myimages.com/image2.png",10
+"Advanced Django","Advanced Django Course",10,180,2023-10-01,2023-12-15,"Django, Course, Advanced",True,True,False,"http://myimages.com/image3.png",10
