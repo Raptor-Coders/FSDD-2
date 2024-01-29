@@ -1,0 +1,38 @@
+<!-- <p>home works!</p> -->
+
+<h1 class="mb-3 text-center">Featured Courses</h1>
+<!-- <div class="course-list">
+  <div class="course-card" *ngFor="let course of featuredCourses">
+    <img
+      [src]="course.imageUrl"
+      alt="{{ course.title }}"
+      class="course-image"
+    />
+    <h3>{{ course.title }}</h3>
+    <p>{{ course.description }}</p>
+    <a [routerLink]="['/courses', course.id]" class="learn-more-button">Learn More</a>
+
+  </div>
+</div> -->
+<!-- <h1>My name is {{ myName2 }}</h1> -->
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-6 mb-3 g-4" *ngFor="let course of featuredCourses">
+      <div class="card w-100 h-100">
+        <img
+          [src]="course.imageUrl"
+          alt="{{ course.title }}"
+          class="card-img-top img-fluid w-100 h-100"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ course.title }}</h3>
+          <p class="card-text">{{ course.description }}</p>
+          <a [routerLink]="['/courses', course.id]" class="btn btn-primary"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

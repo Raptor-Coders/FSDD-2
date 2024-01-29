@@ -1,0 +1,62 @@
+<!-- <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+
+  
+</form> -->
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Course Name</label>
+    <input type="text" id="name" formControlName="name" />
+    <div
+      *ngIf="
+        contactForm.get('name')?.hasError('required') &&
+        contactForm.get('name')?.touched
+      "
+    >
+      Name is required.
+    </div>
+    <div
+      *ngIf="
+        contactForm.get('name')?.hasError('maxlength') &&
+        contactForm.get('name')?.touched
+      "
+    >
+      Maximum length is 100 characters.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div
+      *ngIf="
+        contactForm.get('description')?.hasError('required') &&
+        contactForm.get('description')?.touched
+      "
+    >
+      Description is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="duration">Duration (hours)</label>
+    <input type="number" id="duration" formControlName="duration" />
+    <div
+      *ngIf="
+        contactForm.get('duration')?.hasError('required') &&
+        contactForm.get('duration')?.touched
+      "
+    >
+      Duration is required.
+    </div>
+    <div
+      *ngIf="
+        contactForm.get('duration')?.hasError('min') &&
+        contactForm.get('duration')?.touched
+      "
+    >
+      Duration must be at least 1 hour.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+</form>

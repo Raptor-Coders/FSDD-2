@@ -5,6 +5,8 @@
 __pycache__
 db.sqlite3
 media
+demo/
+frontend/
 
 # Backup files # 
 *.bak 

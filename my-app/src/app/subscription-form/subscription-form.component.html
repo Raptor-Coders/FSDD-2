@@ -1,0 +1,24 @@
+<form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="text" id="email" formControlName="email" />
+    <div
+      *ngIf="
+        subscriptionForm.get('name')?.hasError('required') &&
+        subscriptionForm.get('name')?.touched
+      "
+    >
+      Email is required.
+    </div>
+    <div
+      *ngIf="
+        subscriptionForm.get('name')?.hasError('maxlength') &&
+        subscriptionForm.get('name')?.touched
+      "
+    >
+      Maximum length is 100 characters.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="subscriptionForm.invalid">Submit</button>
+</form>

@@ -10,13 +10,13 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 
-class CourseCreate(generics.CreateAPIView):
+class CourseCreate(generics.ListAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
     # Basic Authentication
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 # class CourseListCreateView(generics.ListCreateAPIView):
 #     queryset = Course.objects.all()

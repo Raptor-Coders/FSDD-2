@@ -1,0 +1,26 @@
+<div class="container">
+  <app-course-form></app-course-form>
+  <div class="row text-center mb-3 mt-3">
+    <div class="col-6">
+      <div class="card">
+        <img
+          [src]="coursesByID.imageUrl"
+          alt="{{ coursesByID.title }}"
+          class="card-img-top img-fluid"
+        />
+        <div class="card-body">
+          <h3 class="card-title">{{ coursesByID.title }}</h3>
+          <p class="card-text">{{ coursesByID.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 gy-5">
+      <h3>Related Courses</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let tag of coursesByID.tags">
+          {{ tag }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
