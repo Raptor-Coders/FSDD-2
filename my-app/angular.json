@@ -20,10 +20,23 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/styles.css",
+              "src/assets/css/colors.css",
+              "src/assets/css/metismenu.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/select2.min.js",
+              "src/assets/js/slick.js",
+              "src/assets/js/jquery.counterup.min.js",
+              "src/assets/js/counterup.min.js",
+              "src/assets/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {

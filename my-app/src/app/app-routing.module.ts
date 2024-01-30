@@ -5,12 +5,14 @@ import { CourseListingComponent } from './course-listing/course-listing.componen
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { RaptorCourseListComponent } from './raptor-course-list/raptor-course-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'courses', component: CourseListingComponent },
   { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'contact-us', component: ContactFormComponent },
+  { path: 'course-list', component: RaptorCourseListComponent },
 ];
 
 @NgModule({
