@@ -1,62 +1,230 @@
-<!-- <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
-
-  
-</form> -->
-
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="name">Course Name</label>
-    <input type="text" id="name" formControlName="name" />
-    <div
-      *ngIf="
-        contactForm.get('name')?.hasError('required') &&
-        contactForm.get('name')?.touched
-      "
-    >
-      Name is required.
-    </div>
-    <div
-      *ngIf="
-        contactForm.get('name')?.hasError('maxlength') &&
-        contactForm.get('name')?.touched
-      "
-    >
-      Maximum length is 100 characters.
+<!-- ============================ Page Title Start================================== -->
+<section class="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="breadcrumbs-wrap">
+          <h1 class="breadcrumb-title">Get in Touch</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Contact
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
+</section>
+<!-- ============================ Page Title End ================================== -->
 
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description" formControlName="description"></textarea>
-    <div
-      *ngIf="
-        contactForm.get('description')?.hasError('required') &&
-        contactForm.get('description')?.touched
-      "
-    >
-      Description is required.
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="duration">Duration (hours)</label>
-    <input type="number" id="duration" formControlName="duration" />
-    <div
-      *ngIf="
-        contactForm.get('duration')?.hasError('required') &&
-        contactForm.get('duration')?.touched
-      "
-    >
-      Duration is required.
-    </div>
-    <div
-      *ngIf="
-        contactForm.get('duration')?.hasError('min') &&
-        contactForm.get('duration')?.touched
-      "
-    >
-      Duration must be at least 1 hour.
-    </div>
-  </div>
+<!-- ============================ Agency List Start ================================== -->
+<section class="bg-light">
+  <div class="container">
+    <!-- row Start -->
+    <div class="row">
+      <div class="col-lg-8 col-md-7">
+        <div class="prc_wrap">
+          <div class="prc_wrap_header">
+            <h4 class="property_block_title">Fillup The Form</h4>
+          </div>
 
-  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
-</form>
+          <div class="prc_wrap-body">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <!-- form Start -->
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label for="name">Course Name</label>
+                    <input
+                      type="text"
+                      class="form-control simple"
+                      id="name"
+                      formControlName="name"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm.get('name')?.hasError('required') &&
+                        contactForm.get('name')?.touched
+                      "
+                    >
+                      Name is required.
+                    </div>
+                    <div
+                      *ngIf="
+                        contactForm.get('name')?.hasError('maxlength') &&
+                        contactForm.get('name')?.touched
+                      "
+                    >
+                      Maximum length is 100 characters.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control simple"
+                      id="email"
+                      formControlName="email"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm.get('email')?.hasError('required') &&
+                        contactForm.get('email')?.touched
+                      "
+                    >
+                      Email is required
+                    </div>
+                    <div
+                      *ngIf="
+                        contactForm.get('email')?.hasError('maxlength') &&
+                        contactForm.get('email')?.touched
+                      "
+                    >
+                      Maximum length is 100 characters.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  id="subject"
+                  class="form-control simple"
+                  formControlName="subject"
+                />
+                <div
+                  *ngIf="
+                    contactForm.get('subject')?.hasError('required') &&
+                    contactForm.get('subject')?.touched
+                  "
+                >
+                  Subject is required.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="duration">Message</label>
+                <textarea
+                  type="number"
+                  class="form-control simple"
+                  id="duration"
+                  formControlName="message"
+                ></textarea>
+                <div
+                  *ngIf="
+                    contactForm.get('message')?.hasError('required') &&
+                    contactForm.get('message')?.touched
+                  "
+                >
+                  Message is required.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button
+                  class="btn btn-theme"
+                  type="submit"
+                  [disabled]="contactForm.invalid"
+                >
+                  Submit Request
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- <div class="prc_wrap-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control simple" />
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control simple" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" class="form-control simple" />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea class="form-control simple"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-theme" type="submit">
+                Submit Request
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Reach Us -->
+
+      <div class="col-lg-4 col-md-5">
+        <div class="prc_wrap">
+          <div class="prc_wrap_header">
+            <h4 class="property_block_title">Reach Us</h4>
+          </div>
+
+          <div class="prc_wrap-body">
+            <div class="contact-info">
+              <h2>Get In Touch</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              </p>
+
+              <div class="cn-info-detail">
+                <div class="cn-info-icon">
+                  <i class="ti-home"></i>
+                </div>
+                <div class="cn-info-content">
+                  <h4 class="cn-info-title">Reach Us</h4>
+                  2512, New Market,<br />Eliza Road, Sincher 80 CA,<br />Canada,
+                  USA
+                </div>
+              </div>
+
+              <div class="cn-info-detail">
+                <div class="cn-info-icon">
+                  <i class="ti-email"></i>
+                </div>
+                <div class="cn-info-content">
+                  <h4 class="cn-info-title">Drop A Mail</h4>
+                  support@Rikada.com<br />Rikada@gmail.com
+                </div>
+              </div>
+
+              <div class="cn-info-detail">
+                <div class="cn-info-icon">
+                  <i class="ti-mobile"></i>
+                </div>
+                <div class="cn-info-content">
+                  <h4 class="cn-info-title">Call Us</h4>
+                  (41) 123 521 458<br />+91 235 548 7548
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+</section>
+<!-- ============================ Agency List End ================================== -->

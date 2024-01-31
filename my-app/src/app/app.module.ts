@@ -13,6 +13,8 @@ import { CourseListingComponent } from './course-listing/course-listing.componen
 import { SubscriptionFormComponent } from './subscription-form/subscription-form.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { RaptorCourseListComponent } from './raptor-course-list/raptor-course-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { RaptorCourseListComponent } from './raptor-course-list/raptor-course-li
     SubscriptionFormComponent,
     ContactFormComponent,
     RaptorCourseListComponent,
+    FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,10 +9,10 @@ import { RaptorCourseListComponent } from './raptor-course-list/raptor-course-li
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'courses', component: CourseListingComponent },
   { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'contact-us', component: ContactFormComponent },
-  { path: 'course-list', component: RaptorCourseListComponent },
+  { path: 'courses', component: RaptorCourseListComponent },
+  // { path: 'course-list', component: CourseListingComponent },
 ];
 
 @NgModule({
