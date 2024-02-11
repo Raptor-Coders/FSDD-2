@@ -24,24 +24,16 @@
           alt="{{ course.title }}"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ course.title }}</h5>
+          <h5 class="card-title">{{ course.title }}     tags {{ course.tags }}</h5>
           <p class="card-text">
             {{ course.description }}
+            tags {{ course.tags }}
           </p>
           <a [routerLink]="['/courses', course.id]" class="btn btn-primary"
             >Learn More</a
           >
-          
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- 
-
-<pre>
-    {{ allCourses | json }}
-
-
-</pre> -->

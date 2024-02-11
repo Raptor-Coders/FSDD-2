@@ -44,6 +44,8 @@ export class CourseService {
     return this.http.get<IcourseInterface>(`${this.coursesUrl}/${id}/`);
   }
 
+
+
   // getCourseById(id: number): IcourseInterface | undefined {
   //   return COURSES.find((course) => course.id === id);
   // }

@@ -290,6 +290,12 @@
                 <h4 class="bl-title">
                   <a href="course-detail.html">{{ course.title }}</a>
                 </h4>
+
+                <ul class="cources_facts_list">
+                  <li class="facts-1" *ngFor="let tag of course.tags">
+                    {{ tag }}
+                  </li>
+                </ul>
               </div>
 
               <div class="cources_info_style3">

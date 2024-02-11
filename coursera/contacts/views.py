@@ -18,8 +18,8 @@ class ContactCreate(generics.CreateAPIView):
     serializer_class = ContactSerializer
 
     # Basic Authentication
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 # class ContactListCreateView(generics.ListCreateAPIView):
 #     queryset = Contact.objects.all()
