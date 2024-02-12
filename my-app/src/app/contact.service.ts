@@ -13,14 +13,11 @@ export class ContactService {
 
   createContact(contactData: Icontact): Observable<any> {
     console.log('Contact data', contactData);
-    return this.http.post<IcourseInterface[]>(
-      `${this.serviceBaseUrl}/api/contacts/`,
-      {
-        fullname: contactData.name,
-        email: contactData.email,
-        phone: contactData.subject,
-        query: contactData.message,
-      }
-    );
+    return this.http.post<Icontact[]>(`${this.serviceBaseUrl}/api/contacts/`, {
+      fullname: contactData.name,
+      email: contactData.email,
+      phone: contactData.subject,
+      query: contactData.message,
+    });
   }
 }
