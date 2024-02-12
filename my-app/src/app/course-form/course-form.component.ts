@@ -17,8 +17,8 @@ export class CourseFormComponent implements OnInit {
   ngOnInit(): void {
     this.courseForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(100)]],
-      description: ['', [Validators.required]],
-      duration: [0, [Validators.required, Validators.min(1)]],
+      email: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.min(1)]],
     });
   }
   onSubmit(): void {
