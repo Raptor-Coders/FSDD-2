@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../contact.service';
+import { CourseFormService } from '../course-form.service';
 
 @Component({
   selector: 'app-course-form',
@@ -12,7 +13,8 @@ export class CourseFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactService: ContactService
+    // private contactService: ContactService
+    private courseFormService: CourseFormService
   ) {}
   ngOnInit(): void {
     this.courseForm = this.formBuilder.group({
@@ -26,15 +28,15 @@ export class CourseFormComponent implements OnInit {
       // Perform data submission or API call here
 
       console.log('Form submitted with data....:', this.courseForm.value);
-      this.contactService
-        .createContact(this.courseForm.getRawValue())
+      this.courseFormService
+        .createCourse(this.courseForm.getRawValue())
         .subscribe(
           (response) => {
-            console.log('contact us created: ');
+            console.log('course form created: ');
             // this.router.navigate(['thank-you']);
           },
           (error) => {
-            console.error('contact us creation error: ', error);
+            console.error('course form creation error: ', error);
           }
         );
     }
