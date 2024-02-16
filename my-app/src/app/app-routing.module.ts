@@ -7,11 +7,12 @@ import { SubscriptionFormComponent } from './subscription-form/subscription-form
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { RaptorCourseListComponent } from './raptor-course-list/raptor-course-list.component';
 
+
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'contact-us', component: ContactFormComponent },
   { path: 'courses', component: RaptorCourseListComponent },
+  { path: '', component: HomeComponent },  
   // { path: 'course-list', component: CourseListingComponent },
 ];
 

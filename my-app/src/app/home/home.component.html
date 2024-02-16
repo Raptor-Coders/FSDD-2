@@ -16,6 +16,70 @@
 </div> -->
 <!-- <h1>My name is {{ myName2 }}</h1> -->
 
+<div class="image-cover hero_banner hero-inner-2 shadow rlt" style="background:#0d1f29 url(assets/img/star-banner.png);" data-overlay="0">
+  <div class="container">
+    <!-- Type -->
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="transparent">
+          <h1 class="big-header-capt cl_2 mb-2">Study beyond the classroom</h1>
+          <p class="mb-4">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est reiciendis voluptatibus maiores alias consequatur</p>
+          <a href="#" class="btn btn-modern green_dark">Enroll Now<span><i class="ti-arrow-right"></i></span></a>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="position-relative hts-100 vw-lg-50">
+          <img class="img-fluid w-100 rounded rounded-lg-right-0" src="https://via.placeholder.com/1700x1600" alt="Image Description">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 col-md-12 mb-3">
+      <div class="sec-heading2">
+        <div class="sec-left">
+          <h3>Featured Courses</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+      <div class="arrow_slide three_slide arrow_middle">
+        <div class="course-card" *ngFor="let course of featuredCourses">
+          <div class="singles_items">
+            <div class="education_block_grid style_2">
+              <div class="education_block_thumb n-shadow">
+                <a  [routerLink]="['/courses', course.id]" class="img-fluid" alt=""> <img src="{{ course.image_url }}"></a>
+              </div>
+              <div class="education_block_body">
+                <h4 class="bl-title"><a href="/courses/{{ course.id }}">>{{ course.title }}</a></h4>
+              </div>
+              <div class="education_block_footer">
+                <div class="education_block_author">
+                  <div class="path-img"><a href="instructor-detail.html"><img src="https://via.placeholder.com/500x500" class="img-fluid" alt=""></a></div>
+                  <h5><a href="instructor-detail.html">Ahsan</a></h5>
+                </div>
+                <div class="foot_lecture"><i class="ti-control-skip-forward mr-2"></i>26 lectures</div>
+              </div>
+            </div>	
+          </div>
+          <!--
+            < a [routerLink]="['/courses', course.id]" class="learn-more-button">Learn More</a>
+          -->
+        </div>    
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<!--
 <div class="container text-center">
   <div class="row">
     <div class="col-sm-6 mb-3 g-4" *ngFor="let course of featuredCourses">
@@ -36,3 +100,4 @@
     </div>
   </div>
 </div>
+-->d
