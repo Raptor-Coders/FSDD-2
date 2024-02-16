@@ -738,11 +738,11 @@ div[data-overlay] p{
     animation: spinner-border .75s linear infinite;
 }
 
-.spinner-border-sm {
+/* .spinner-border-sm {
   width: $spinner-width-sm;
   height: $spinner-height-sm;
   border-width: $spinner-border-width-sm;
-}
+} */
 .sr-only {
     position: absolute;
     width: 1px;

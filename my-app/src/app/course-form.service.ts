@@ -9,17 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CourseFormService {
   private serviceBaseUrl = 'http://localhost:8000';
-  id: number = +this.route.snapshot.params['id'];
+  // id: number = +this.route.snapshot.params['id'];
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
   createCourse(studentData: IcourseFormInterface): Observable<any> {
     console.log('Student Data', studentData);
     return this.http.post<IcourseFormInterface[]>(
       `${this.serviceBaseUrl}/api/students/`,
       {
-        fullname: studentData.name,
+        course: studentData.course,
+        fullname: studentData.fullname,
         email: studentData.email,
         phone: studentData.phone,
-        course: this.id,
       }
     );
   }
