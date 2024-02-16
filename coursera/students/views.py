@@ -19,8 +19,8 @@ class StudentDetails(generics.RetrieveAPIView):
     serializer_class = StudentSerializer
 
     # Basic Authentication
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 # class StudentRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = Student.objects.all()
