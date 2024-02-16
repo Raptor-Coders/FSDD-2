@@ -17,6 +17,8 @@ export class CourseDetailsComponent implements OnInit {
     private courseService: CourseService,
     private route: ActivatedRoute
   ) {
+
+   
     // const id: number = +route.snapshot.params['id'];
     // console.log(id)
     // for (let course of COURSES) {
@@ -30,6 +32,7 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id: number = +this.route.snapshot.params['id'];
     this.getCourseById(id);
+     console.log(id);
     
   }
   getCourseById(id:number) {

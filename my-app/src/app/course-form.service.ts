@@ -16,10 +16,10 @@ export class CourseFormService {
     return this.http.post<IcourseFormInterface[]>(
       `${this.serviceBaseUrl}/api/students/`,
       {
-        fullname: studentData.name,
+        course: studentData.course,
+        fullname: studentData.fullname,
         email: studentData.email,
         phone: studentData.phone,
-        // course: this.id,
       }
     );
   }

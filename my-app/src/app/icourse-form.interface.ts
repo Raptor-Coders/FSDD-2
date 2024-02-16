@@ -1,5 +1,6 @@
 export interface IcourseFormInterface {
-  name: string;
+  fullname: string;
   email: string;
   phone: string;
+  course: number;
 }
