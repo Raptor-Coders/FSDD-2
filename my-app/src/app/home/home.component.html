@@ -55,10 +55,12 @@
           <div class="singles_items">
             <div class="education_block_grid style_2">
               <div class="education_block_thumb n-shadow">
-                <a  [routerLink]="['/courses', course.id]" class="img-fluid" alt=""> <img src="{{ course.image_url }}"></a>
+                <a [routerLink]="['/courses/', course.id]" class="img-fluid" alt=""> <img src="{{ course.imageUrl }}"></a>
+
               </div>
               <div class="education_block_body">
-                <h4 class="bl-title"><a href="/courses/{{ course.id }}">>{{ course.title }}</a></h4>
+                
+                <h4 class="bl-title"><a [routerLink]="['/courses/', course.id]">{{ course.title }}</a></h4>
               </div>
               <div class="education_block_footer">
                 <div class="education_block_author">

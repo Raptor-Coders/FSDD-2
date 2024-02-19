@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { COURSES } from './courses-data';
+import { Observable, map } from 'rxjs';
 import { IcourseInterface } from './icourse.interface';
+
 
 @Injectable({
   providedIn: 'root',
@@ -18,37 +18,17 @@ export class CourseService {
     return 'Dele';
   }
 
-  getFeaturedCourses() {
-    const featuredCourses: IcourseInterface[] = [];
-    for (const course of COURSES) {
-      if (course.isFeatured) {
-        featuredCourses.push(course);
-      }
-    }
-    return featuredCourses;
-  }
-
   getAllCourses(): Observable<IcourseInterface[]> {
     return this.http.get<IcourseInterface[]>(this.coursesUrl);
   }
 
-  // getAllCourses(): IcourseInterface[] {
-  //   // const allCourses: IcourseInterface[] = [];
-  //   // for (const course of COURSES) {
-  //   //   allCourses.push(course);
-  //   // }
-  //   return COURSES;
-  // }
+  getFeaturedCourses(): Observable<IcourseInterface[]> {
+    return this.getAllCourses().pipe( map( courses => courses.filter(course => course.isFeatured) ) );
+  }
 
   getCourseById(id: number): Observable<IcourseInterface> {
     return this.http.get<IcourseInterface>(`${this.coursesUrl}/${id}/`);
   }
-
-
-
-  // getCourseById(id: number): IcourseInterface | undefined {
-  //   return COURSES.find((course) => course.id === id);
-  // }
 } // end class
 
 export function getMyName2() {
