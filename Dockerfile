@@ -1,32 +1,16 @@
-# Use the base image: Python 3.11
-FROM python:3.11
+FROM heroku/heroku:22
+RUN apt-get update && apt-get install -y curl build-essential python-pip gcc python3-dev musl-dev python3-venv libpq-dev
 
-# Create a directory in the image
-RUN mkdir -p /home/app
-
-# Set the working dir
-WORKDIR /home/app
-
-# Prevent Python from writing bytecode files (.pyc files) to disk. Not needed when
-# building images.
+RUN python3 -m venv /opt/venv
 ENV PYTHONDONTWRITEBYTECODE 1
-
-# In a Docker container or similar environments, unbuffered mode can help ensure
-# that output from Python applications is immediately visible in the container logs,
-# making troubleshooting and monitoring easier.
 ENV PYTHONUNBUFFERED 1
+ENV DEBUG 0
+ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install psycopg2-binary
 
-# Upgrade pip
-RUN pip install --upgrade pip
-
-# Copy all files on current dir and sub dirs to the container image's /home/app/ dir
-COPY . /home/app/
-
-# Install requirements
+WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
-
-# Setting the exposed port
-EXPOSE 8000
-
-# Run the command when container is run
-CMD python manage.py runserver 0.0.0.0:8000
+RUN python manage.py collectstatic --noinput
+RUN adduser django
+USER django
