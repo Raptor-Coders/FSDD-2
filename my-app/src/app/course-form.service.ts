@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root',
 })
 export class CourseFormService {
-  private serviceBaseUrl = 'http://localhost:8000';
+  private serviceBaseUrl = '';
   // id: number = +this.route.snapshot.params['id'];
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
   createCourse(studentData: IcourseFormInterface): Observable<any> {

@@ -8,7 +8,7 @@ import { IcourseInterface } from './icourse.interface';
   providedIn: 'root',
 })
 export class CourseService {
-  private coursesUrl = 'http://localhost:8000/api/courses';
+  private coursesUrl = '/api/courses/';
   // private coursesUrl = 'https://www.raptorcoders.com/api/courses/';
 
   constructor(private http: HttpClient) {}

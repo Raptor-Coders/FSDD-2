@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ContactService {
-  private serviceBaseUrl = 'http://localhost:8000/';
+  private serviceBaseUrl = '';
   constructor(private http: HttpClient) {}
 
   createContact(contactData: Icontact): Observable<any> {
