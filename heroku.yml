@@ -1,0 +1,20 @@
+build:
+  docker:
+    web: Dockerfile
+release:
+  image: web
+  command:
+    - python manage.py migrate
+run:
+  web: gunicorn coursera.wsgi:application --bind 0.0.0.0:$PORT
+setup:
+  addons:
+  - plan: heroku-postgresql
+    as: DATABASE
+  - plan: cloudamqp
+  config:
+    DEBUG: False
+    LOCAL: False
+    SECURE_SSL_REDIRECT: True
+    SESSION_COOKIE_SECURE: True
+    CSRF_COOKIE_SECURE: True
